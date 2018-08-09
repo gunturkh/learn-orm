@@ -16,7 +16,8 @@
     "mariadb": "^0.7.0",
     "morgan": "~1.9.0",
     "mysql2": "^1.6.1",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "yarn": "^1.9.4"
   },
   "devDependencies": {
     "node-dev": "^3.1.3"
