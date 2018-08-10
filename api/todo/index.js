@@ -8,5 +8,6 @@ router.get('/', controller.get);
 router.get('/:id', controller.getOneById);
 router.post('/', controller.insert);
 router.delete('/:id', controller.deleteTaskById)
+router.put('/:id', controller.update)
 
 module.exports = router;
