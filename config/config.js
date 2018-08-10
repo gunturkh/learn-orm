@@ -1,3 +1,4 @@
+var myConfig = require('dotenv-extended').load();
 module.exports = {
   "development": {
     "username": process.env.DB_USERNAME,

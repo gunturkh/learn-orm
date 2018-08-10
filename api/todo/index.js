@@ -6,5 +6,7 @@ const controller = require('./controller')
 /* ROUTES/VIEW */
 router.get('/', controller.get);
 router.get('/:id', controller.getOneById);
+router.post('/', controller.insert);
+router.delete('/:id', controller.deleteTaskById)
 
 module.exports = router;
