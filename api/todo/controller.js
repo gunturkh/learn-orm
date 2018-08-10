@@ -1,9 +1,9 @@
 const models = require('../../models')
-
+const todo = models.todo_list
 
 const controller = {
     get: (req, res, next) => {
-        models.todo_list
+        todo
             .findAll().then(todo_lists => {
                 res.send({
                     todo_lists
@@ -37,7 +37,7 @@ const controller = {
     },
 
     insert: (req, res, next) => {
-        models.todo_list.build(
+        todo.build(
             {
                 priority_id: req.body.priority_id,
                 todo_task: req.body.todo_task,
@@ -64,7 +64,7 @@ const controller = {
             })
             .then(todo =>
                 res.send({
-                    todo
+                    message: `task with id: ${id} has been deleted`
                 })
 
             ).catch(error => {
@@ -72,6 +72,33 @@ const controller = {
                     error
                 })
             })
+    },
+    update: (req, res, next) => {
+        const id = Number(req.params.id)
+        todo
+            .update(
+                {
+                    priority_id: req.body.priority_id,
+                    todo_task: req.body.todo_task,
+                    created_date: req.body.created_date,
+                    due_date: req.body.due_date
+                },
+                {
+                    where: {
+                        id: id
+                    }
+                })
+            .then(todo => {
+                res.send({
+                    message: `task with id: ${id} has been updated`
+                })
+            })
+            .catch(err => {
+                res.status(400).send({
+                    Error: err.stack
+                })
+            })
+
     }
 }
 
