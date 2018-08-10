@@ -2,6 +2,6 @@
     "name": "learn-heroku-deploy",
     "description": "Learn deploying app on heroku",
     "repository": "https://github.com/gunturkh/learn-orm",
-    "keywords": ["Learn", "Depoy", "Heroku"],
+    "keywords": ["Learn", "Deploy", "Heroku"],
     "image": "heroku/nodejs"
   }
