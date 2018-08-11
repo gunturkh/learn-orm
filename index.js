@@ -17,7 +17,7 @@ require('dotenv-extended').load({
  */
 
 const app = require('./app');
-const debug = require('debug')('code-express-orm-mariadb:server');
+const debug = require('debug')('learn-orm:server');
 const http = require('http');
 const models = require('./models');
 
