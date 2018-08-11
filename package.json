@@ -36,6 +36,7 @@
     "yarn": "^1.9.4"
   },
   "devDependencies": {
+    "heroku": "^7.7.8",
     "node-dev": "^3.1.3",
     "sequelize-cli": "^4.0.0"
   }
