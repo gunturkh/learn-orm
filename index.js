@@ -25,7 +25,7 @@ const models = require('./models');
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT);
+const port = normalizePort(process.env.PORT||'3306');
 app.set('port', port);
 
 /**
