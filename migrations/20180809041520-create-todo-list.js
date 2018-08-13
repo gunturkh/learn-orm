@@ -8,16 +8,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      priority_id: {
-        type: Sequelize.INTEGER
-      },
-      todo_task: {
+      priority: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      created_date: {
-        type: Sequelize.DATE
+      todo_task: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      completed: {
+        allowNull: false,
+        type: Sequelize.ENUM('true', 'false')
       },
       due_date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       createdAt: {
