@@ -6,6 +6,7 @@ const controller = require('./controller')
 /* ROUTES/VIEW */
 router.get('/', controller.get);
 router.get('/:id', controller.getOneById);
+router.get('/search', controller.searchByKeyword);
 router.post('/', controller.insert);
 router.delete('/:id', controller.deleteTaskById)
 router.put('/:id', controller.update)
