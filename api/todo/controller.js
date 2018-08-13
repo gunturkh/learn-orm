@@ -37,14 +37,12 @@ const controller = {
     },
 
     insert: (req, res, next) => {
-        todo.build(
-            {
-                priority_id: req.body.priority_id,
+        todo.build({
+                priority: req.body.priority,
                 todo_task: req.body.todo_task,
-                created_date: req.body.created_date,
+                completed: req.body.completed,
                 due_date: req.body.due_date
-            }
-        )
+            })
             .save()
             .then(todo =>
 
@@ -76,18 +74,16 @@ const controller = {
     update: (req, res, next) => {
         const id = Number(req.params.id)
         todo
-            .update(
-                {
-                    priority_id: req.body.priority_id,
-                    todo_task: req.body.todo_task,
-                    created_date: req.body.created_date,
-                    due_date: req.body.due_date
-                },
-                {
-                    where: {
-                        id: id
-                    }
-                })
+            .update({
+                priority: req.body.priority,
+                todo_task: req.body.todo_task,
+                completed: req.body.completed,
+                due_date: req.body.due_date
+            }, {
+                where: {
+                    id: id
+                }
+            })
             .then(todo => {
                 res.send({
                     message: `task with id: ${id} has been updated`
