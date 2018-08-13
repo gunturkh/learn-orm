@@ -1,12 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const todo = sequelize.define(`todo_list`, {
-    priority_id: DataTypes.INTEGER,
+    priority: DataTypes.STRING,
     todo_task: DataTypes.STRING,
-    created_date: DataTypes.DATE,
+    completed: DataTypes.ENUM('true', 'false'),
     due_date: DataTypes.DATE
   }, {});
-  todo.associate = function(models) {
+  todo.associate = function (models) {
     // associations can be defined here
   };
   return todo;
