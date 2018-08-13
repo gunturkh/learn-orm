@@ -8,25 +8,24 @@ module.exports = {
     */
 
     const demoTodo = [{
-      priority_id: '1',
-      todo_task: 'Learn MariaDB',
-      created_date: new Date(),
-      due_date: new Date()
-    },
-    {
-      priority_id: '2',
-      todo_task: 'Review API',
-      created_date: new Date(),
-      due_date: new Date(),
-      
-    },
-    {
-      priority_id: '3',
-      todo_task: 'Review HTML & CSS',
-      created_date: new Date(),
-      due_date: new Date()
-    }
-  ]
+        username: 'guntur',
+        email: 'guntur@gmail.com',
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      },
+      {
+        username: 'maya',
+        email: 'maya@gmail.com',
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      },
+      {
+        username: 'alif',
+        email: 'alif@gmail.com',
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      }
+    ]
 
     return queryInterface.bulkInsert('todo_list', demoTodo, {});
   },
