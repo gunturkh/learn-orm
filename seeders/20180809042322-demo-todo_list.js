@@ -13,24 +13,30 @@ module.exports = {
       }], {});
     */
     const demoTodo = [{
-      priority_id: '1',
-      todo_task: 'Learn Sequelize',
-      created_date: new Date(),
-      due_date: new Date()
-    },
-    {
-      priority_id: '2',
-      todo_task: 'Review Sequelize',
-      created_date: new Date(),
-      due_date: new Date(),
-
-    },
-    {
-      priority_id: '3',
-      todo_task: 'Learn ORM',
-      created_date: new Date(),
-      due_date: new Date()
-    }]
+        priority: 'low',
+        todo_task: 'Learn Sequelize',
+        completed: 'false',
+        due_date: new Date(),
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      },
+      {
+        priority: 'medium',
+        todo_task: 'Review Sequelize',
+        completed: 'false',
+        due_date: new Date(),
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      },
+      {
+        priority: 'high',
+        todo_task: 'Learn ORM',
+        completed: 'false',
+        due_date: new Date(),
+        createdAt: new Date(),
+        UpdatedAt: new Date()
+      }
+    ]
   },
 
   down: (queryInterface, Sequelize) => {
@@ -41,6 +47,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-   return queryInterface.bulkDelete('todo_lists', null, {});
+    return queryInterface.bulkDelete('todo_lists', null, {});
   }
 };
