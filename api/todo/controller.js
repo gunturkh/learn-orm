@@ -1,5 +1,5 @@
 const models = require('../../models')
-const todo = models.todo_list
+const todo = models.todo_list;
 
 const controller = {
     get: (req, res, next) => {
@@ -45,7 +45,6 @@ const controller = {
             })
             .save()
             .then(todo =>
-
                 res.send({
                     todo
                 })
@@ -95,6 +94,31 @@ const controller = {
                 })
             })
 
+    },
+    searchByKeyword: (req, res, next) => {
+        const keyword = req.query.q;
+        const Sequelize = require('sequelize');
+        const Op = Sequelize.Op
+        todo
+            .findAll({
+                where: {
+                    todo_task: {
+                        [Op.like]: `%${keyword}%`
+                    }
+                }
+            })
+            .then(result => {
+                console.log(result)
+                if (result) {
+                    res.status(200).send({
+                        result
+                    });
+                } else {
+                    res.status(404).send({
+                        message: "Data not found!"
+                    })
+                }
+            });
     }
 }
 
